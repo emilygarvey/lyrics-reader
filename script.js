@@ -2,6 +2,33 @@ let apiBaseUrl = 'https://api.lyrics.ovh/v1/'
 
 let synth = window.speechSynthesis;
 let isMuted;
+let utterance;
+let volume = 0.5;
+let voices;
+setTimeout(() => {
+    voices = synth.getVoices()
+    voices = filterVoices(voices);
+    console.log(voices);
+    appendVoicesToDropdown();
+}, 100);
+
+function filterVoices(voices) {
+    return voices.filter((voice) => {
+        if (voice.lang === 'en-US') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    })
+}
+
+function appendVoicesToDropdown() {
+    voices.forEach((voice, i) => {
+        $("#voice-select").append(`<option value=${i}>${voice.name}</option>`);
+    })
+}
+
 
 $('#get-lyrics').click(function() {
     let artist = $('#artist').val();
@@ -26,10 +53,12 @@ function getLyrics(artist, title) {
 
 $('#pause-resume').click(toggleSpeech);
 
+
 function speak(text) {
-    let utterance = new SpeechSynthesisUtterance();
+    utterance = new SpeechSynthesisUtterance();
     utterance.text = text;
-    utterance.volume = 1;
+    utterance.volume = volume;
+    utterance.voice = voices[0];
     synth.cancel();
     isMuted = false;
     synth.speak(utterance);
@@ -40,7 +69,7 @@ function toggleSpeech() {
     let button = $('#pause-resume');
 
     if (isMuted) {
-        synth.resume()
+        synth.resume();
         isMuted = false;
         button.text('PAUSE');
     } else {
