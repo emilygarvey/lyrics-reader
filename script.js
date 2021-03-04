@@ -11,7 +11,7 @@ setTimeout(() => {
   voices = synth.getVoices();
   voices = filterVoices(voices);
   console.log(voices);
-  appendVoicesToDropdown();
+  addVoiceButtons();
 }, 500);
 
 function filterVoices(voices) {
@@ -28,7 +28,7 @@ function updateVoice(index) {
   chosenVoice = index;
 }
 
-function appendVoicesToDropdown() {
+function addVoiceButtons() {
   voices.forEach((voice, index) => {
     $(".voice-buttons").append(
       `<button onclick="updateVoice(${index})">${voice.name}</button>`
