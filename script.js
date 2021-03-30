@@ -1,4 +1,4 @@
-let apiBaseUrl = "https://api.lyrics.ovh/v1/";
+let apiBaseUrl = "https://api.lyrics.ovh/v1";
 
 let synth = window.speechSynthesis;
 let isMuted;
@@ -7,7 +7,18 @@ let volume = 0.5;
 let voices;
 let chosenVoice = 0;
 
-$("#pause-resume").click(toggleSpeech);
+$("#get-lyrics").click(function () {
+  let artist = $("#artist").val();
+  let song = $("#title").val();
+  fetch(`${apiBaseUrl}/${artist}/${song}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      $("#lyrics").text(data.lyrics);
+      speak(data.lyrics);
+    });
+});
 
 function speak(text) {
   utterance = new SpeechSynthesisUtterance();
@@ -19,6 +30,8 @@ function speak(text) {
   synth.speak(utterance);
   $("#pause-resume").text("PAUSE");
 }
+
+$("#pause-resume").click(toggleSpeech);
 
 function toggleSpeech() {
   let button = $("#pause-resume");
