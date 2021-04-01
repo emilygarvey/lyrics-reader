@@ -1,12 +1,12 @@
 let apiBaseUrl = "https://api.lyrics.ovh/v1";
 
 let synth = window.speechSynthesis;
-let isMuted;
 let utterance;
 let volume = 0.5;
 let voices;
 let chosenVoice = 0;
 
+// Write code here
 $("#get-lyrics").click(function () {
   let artist = $("#artist").val();
   let song = $("#title").val();
@@ -17,32 +17,44 @@ $("#get-lyrics").click(function () {
     .then(function (data) {
       $("#lyrics").text(data.lyrics);
       speak(data.lyrics);
+      console.log(data.lyrics);
     });
 });
 
+// Do not change below here
 function speak(text) {
   utterance = new SpeechSynthesisUtterance();
   utterance.text = text;
   utterance.volume = volume;
   utterance.voice = voices[chosenVoice];
-  synth.cancel();
-  isMuted = false;
   synth.speak(utterance);
-  $("#pause-resume").text("PAUSE");
 }
 
-$("#pause-resume").click(toggleSpeech);
+$("#stop").click(function () {
+  synth.cancel();
+  $("#lyrics").text("");
+});
 
-function toggleSpeech() {
-  let button = $("#pause-resume");
+// Extension: complete updateVoices and addVoiceButtons
+function updateVoice(index) {
+  chosenVoice = index;
+}
 
-  if (isMuted) {
-    synth.resume();
-    isMuted = false;
-    button.text("PAUSE");
-  } else {
-    synth.pause();
-    isMuted = true;
-    button.text("RESUME");
-  }
+function addVoiceButtons() {}
+
+setTimeout(() => {
+  voices = synth.getVoices();
+  voices = filterVoices(voices);
+  console.log(voices);
+  addVoiceButtons();
+}, 500);
+
+function filterVoices(voices) {
+  return voices.filter((voice) => {
+    if (voice.lang === "en-US") {
+      return true;
+    } else {
+      return false;
+    }
+  });
 }
