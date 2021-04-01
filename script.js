@@ -10,12 +10,15 @@ let chosenVoice = 0;
 $("#get-lyrics").click(function () {
   let artist = $("#artist").val();
   let song = $("#title").val();
+  $("#lyrics").text("Loading...");
+  $("#get-lyrics").prop("disabled", true);
   fetch(`${apiBaseUrl}/${artist}/${song}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       $("#lyrics").text(data.lyrics);
+      $("#get-lyrics").prop("disabled", false);
       speak(data.lyrics);
       console.log(data.lyrics);
     });
