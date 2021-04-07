@@ -2,7 +2,7 @@
 
 ## Overview:
 
-In this unit, coders will use a (lyrics API)[https://lyricsovh.docs.apiary.io/#] to create an app that will allow the user to input a musical artist and song title, and play audio that reads out the lyrics of the song. Playlist. To create this project, coders will utilize loops..... TBD
+In this unit, coders will use a [lyrics API](https://lyricsovh.docs.apiary.io/#) to create an app that will allow the user to input a musical artist and song title, and play audio that reads out the lyrics of the song. Playlist. To create this project, coders will utilize loops..... TBD
 
 ## Day 1
 
@@ -52,7 +52,7 @@ In this unit, coders will use a (lyrics API)[https://lyricsovh.docs.apiary.io/#]
 
 ### Day 2 Goal 4: Disable the "Get Lyrics" button so the user can't click it while the API request is working
 
-- [ ] Use the jQuery [`prop()` method](https://api.jquery.com/prop/) to set "disabled" to `true` while the lyrics are loading
+- [ ] Use the jQuery `prop()` method [(documentation here)](https://api.jquery.com/prop/) to set "disabled" to `true` while the lyrics are loading
 - [ ] Use the jQuery `prop()` method to set "disabled" to `false` once the lyrics have finished loading
 
 #### Wrap
