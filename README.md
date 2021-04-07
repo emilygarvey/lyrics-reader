@@ -22,7 +22,7 @@ In this unit, coders will use a (lyrics API)[https://lyricsovh.docs.apiary.io/#]
 
 - [ ] Read through the HTML starter code to understand the organization and class names given.
 - [ ] Read through the `script.js` starter code to determine what global variables are declared, and what the two declared functions do.
-- [ ] Go to the API documentation (here)[https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search] to see how the API request is set up.
+- [ ] Go to the API documentation [here](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search) to see how the API request is set up.
 
 ### Day 1 Goal 2: Write a fetch request to the API to return the song lyrics
 
