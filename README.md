@@ -40,56 +40,34 @@ In this unit, coders will use a (lyrics API)[https://lyricsovh.docs.apiary.io/#]
 
 - [ ] Write a click handler for the "Get Lyrics" button and move your fetch request into the body
 - [ ] Declare the variables needed, and save the user's artist name and song title to the variables
-- [ ] Use template literals to update the request URL in your fetch request so the user's song lyrics display when the button is clicked.
+- [ ] Use template literals to update the request URL in your fetch request so the user's song lyrics display when the button is clicked
 
-<!-- ### Day 2 Goal 1: Write the code to display your song titles on the page
+### Day 2 Goal 2: Implement the speech functionality for the song lyrics
 
-- [ ] Create a loop that loops through your song name array and displays your song names in the correct div
+- [ ] Call the `speak` function inside your fetch request so that the lyrics displayed on the screen are spoken aloud
 
-### Day 2 Goal 2: Write the code to display the rest of your song information
+### Day 2 Goal 3: Display a 'Loading' screen before the API fetch request is complete
 
-- [ ] Create loops that loop through your song artists, song lengths, images, and links arrays and display the information in the correct divs.
+- [ ] Add a jQuery `.text()` method before your fetch request so that your screen displays a 'Loading' message when the button is clicked, before your API fetch request is complete
 
-#### Wrap
+### Day 2 Goal 4: Disable the "Get Lyrics" button so the user can't click it while the API request is working
 
-- [ ] Push your changes!
-
-## Day 3
-
-### Day 3 Goal 1: Write the code to allow users to add additional songs to your playlist
-
-- [ ] Declare a variable and save the value of the user input with class `song`
-- [ ] Use `.push()` to add the value to your song name array.
-
-### Day 3 Goal 2: Write the code to allow users to add additional song information to your playlist
-
-- [ ] Declare additional variables and save the values of each input tag
-- [ ] Use `.push()` to add each input value to the correct array
+- [ ] Use the jQuery [`prop()` method](https://api.jquery.com/prop/) to set "disabled" to `true` while the lyrics are loading
+- [ ] Use the jQuery `prop()` method to set "disabled" to `false` once the lyrics have finished loading
 
 #### Wrap
 
 - [ ] Push your changes!
 
-## Day 4
+## Day 3 (Extension: Add functionality to change the voice of your lyrics reader)
 
-### Day 4 Goal 1: Refactor your arrays so all your song information is stored in Objects
+### Day 3 Goal 1:
 
-- [ ] Comment out your arrays
-- [ ] Create an Object for each of your songs
-- [ ] Inside each Object, add key/value pairs to store the title, artist, song length, image, and link
-- [ ] Store all your Objects in one array
+- [ ]
 
-#### Wrap
+### Day 3 Goal 2:
 
-- [ ] Push your changes!
-
-## Day 5
-
-### Day 5 Goal 1: Refactor your loops so all your song information displays correctly on the page
-
-- [ ] Update your click handler so the input values are saved in as values in a new Object
-- [ ] Update your `.push()` so the input Object is added to your array of Objects
-- [ ] Update your loops based on your new array of Objects
+- [ ]
 
 #### Wrap
 
@@ -98,11 +76,6 @@ In this unit, coders will use a (lyrics API)[https://lyricsovh.docs.apiary.io/#]
 ## Project Extensions:
 
 - [ ] Add in your own CSS to personalize your project
-- [ ] Use .length to display how many songs are on your list
-- [ ] Add a delete button to delete songs on your list
-- [ ] Refactor your project further by utilizing functions to simplify your code
-- [ ] Add a shuffle button and functionality
-- [ ] Use local storage to save your songs locally
 
 ## References/Tools -->
 
