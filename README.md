@@ -6,7 +6,7 @@ In this unit, coders will use a [lyrics API](https://lyricsovh.docs.apiary.io/#)
 
 ## Day 1
 
-## Day 1 Goal 1: Set Up
+### Day 1 Goal 1: Set Up
 
 #### Planning
 
